@@ -1,4 +1,4 @@
-<?php extend('../templates/main.html', ['title' => 'Home Page']) ?>
+<?php extend('../templates/main.html', ['title' => 'Quick WP - A command line tool for quick, easy, disposable, Local WordPress sites']) ?>
 
 <?php
 // Page content here
@@ -6,10 +6,14 @@
 // includePart('../parts/some-part.html', ['param' => 'value'])
 ?>
 
-<h1 class="mt-8 text-6xl text-center">Hello, World!</h1>
+<h1 class="mt-8 text-6xl text-center">Quick WP</h1>
 
-<?php if (ENVIRONMENT === 'DEVELOPMENT') : ?>
-    <h2 class="mt-4 text-2xl text-center">Sssh, we're only testing!</h2>
-<?php endif; ?>
+<h2 class="mt-4 text-2xl text-center">A command line tool for quick, easy, disposable, Local WordPress sites</h2>
+
+<div class="text-center">
+    <a class="mt-8 text-lg inline-block border border-black px-4 py-2" href="https://github.com/rosswintle/quick-wp">
+        GitHub
+    </a>
+</div>
 
 <?php endExtend(); ?>
