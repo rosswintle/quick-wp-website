@@ -4,8 +4,14 @@
   "description": "A template for a small site using a simple PHP build process, TailwindCSS and AlpineJS",
   "main": "tailwind.config.js",
   "scripts": {
-    "build:dev": "npx tailwindcss build -i ./src/css/styles.css -o ./public/css/styles.css",
-    "build:prod": "NODE_ENV=production npx tailwindcss-cli@latest build -i ./src/css/styles.css -o ./public/css/styles.css"
+    "dev:build": "npx tailwindcss build -i ./src/css/styles.css -o ./public/css/styles.css",
+    "dev:site:esbuild": "npx esbuild src/js/main.js --bundle --minify --sourcemap --outfile=public/js/main.min.js",
+    "dev:site:buildpages": "php ./build.php",
+    "dev:site:build": "npm run dev:site:esbuild && npm run dev:site:buildpages && npm run dev:build",
+    "prod:build": "NODE_ENV=production npx tailwindcss-cli@latest build -i ./src/css/styles.css -o ./public/css/styles.css",
+    "prod:site:esbuild": "npx esbuild src/js/turbo-admin/main.js --bundle --minify --sourcemap --outfile=public/js/turbo-admin/main.min.js",
+    "prod:site:buildpages": "php ./build.php --prod",
+    "prod:site:build": "npm run prod:site:esbuild && npm run prod:site:buildpages && npm run prod:build"
   },
   "repository": {
     "type": "git",
